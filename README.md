@@ -20,10 +20,34 @@ The repository includes:
 ```text
 Summer_Assignment_2401920100277
 │
-├── Week_1
-├── Week_2
-├── Week_3
-└── Week_4
+├── Week_1/
+│   ├── Day_1/
+│   ├── Day_2/
+│   ├── Day_3/
+│   ├── Day_4/
+│   ├── Day_5/
+│   └── OOPS/
+├──Week_2/
+│   ├── Day_1/
+│   ├── Day_2/
+│   ├── Day_3/
+│   ├── Day_4/
+│   ├── Day_5/
+│   └── OOPS/
+├── Week_3/
+│   ├── Day_1/
+│   ├── Day_2/
+│   ├── Day_3/
+│   ├── Day_4/
+│   ├── Day_5/
+│   └── OOPS/
+└── Week_4/
+    ├── Day_1/
+    ├── Day_2/
+    ├── Day_3/
+    ├── Day_4/
+    ├── Day_5/
+    └── OOPS/
 ```
 
 Each week contains:
