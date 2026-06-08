@@ -1,122 +1,77 @@
-interface LibraryUser {
-    void registerAccount();
-    void requestBook();
+
+interface Libraryuser{
+   void registerAccount();
+   void requestBook();
 }
-
-class KidUsers implements LibraryUser {
-
+class KidUsers implements Libraryuser {
     int age;
     String bookType;
 
-    KidUsers(int age, String bookType) {
-        this.age = age;
-        this.bookType = bookType;
-    }
-
-    @Override
     public void registerAccount() {
         if (age < 12) {
-            System.out.println("You have successfully registered under a Kids Account");
-        } else {
-            System.out.println("Sorry, Age must be less than 12 to register as a kid");
+            System.out.println("You have sucessfully registered under a Kids Account");
+        }
+        if (age > 12) {
+            System.out.println("Sorry,Age must be less than 12 to register as a kid");
         }
     }
 
-    @Override
     public void requestBook() {
-        if (bookType.equalsIgnoreCase("Kids")) {
-            System.out.println("Book Issued successfully, please return the book within 10 days");
-        } else {
-            System.out.println("Oops, you are
-interface LibraryUser {
-    void registerAccount();
-    void requestBook();
-}
-
-class KidUsers implements LibraryUser {
-
-    int age;
-    String bookType;
-
-    KidUsers(int age, String bookType) {
-        this.age = age;
-        this.bookType = bookType;
-    }
-
-    @Override
-    public void registerAccount() {
-        if (age < 12) {
-            System.out.println("You have successfully registered under a Kids Account");
-        } else {
-            System.out.println("Sorry, Age must be less than 12 to register as a kid");
-        }
-    }
-
-    @Override
-    public void requestBook() {
-        if (bookType.equalsIgnoreCase("Kids")) {
-            System.out.println("Book Issued successfully, please return the book within 10 days");
+        if (bookType.equals("Kids")) {
+            System.out.println("“Book Issued successfully, please return the book \n" +
+                    "within 10 days");
         } else {
             System.out.println("Oops, you are allowed to take only kids books");
         }
     }
 }
-
-class AdultUser implements LibraryUser {
-
+class AdultUser implements Libraryuser{
     int age;
     String bookType;
 
-    AdultUser(int age, String bookType) {
-        this.age = age;
-        this.bookType = bookType;
-    }
-
-    @Override
     public void registerAccount() {
         if (age > 12) {
-            System.out.println("You have successfully registered under an Adult Account");
-        } else {
-            System.out.println("Sorry, Age must be greater than 12 to register as an adult");
+            System.out.println("You have sucessfully registered under a Adult Account");
+        }
+        if (age < 12) {
+            System.out.println("Sorry,Age must be greater than 12 to register as a adult");
         }
     }
 
-    @Override
     public void requestBook() {
-        if (bookType.equalsIgnoreCase("Fiction")) {
-            System.out.println("Book Issued successfully, please return the book within 7 days");
+        if (bookType.equals("Fiction")) {
+            System.out.println("“Book Issued successfully, please return the book \n" +
+                    "within 7 days");
         } else {
             System.out.println("Oops, you are allowed to take only adult Fiction books");
         }
     }
 }
 
-
-public class user_library_interface {
+public class LibraryInterfaceDemo {
     public static void main(String[] args) {
+        //Test case 1
+    Libraryuser user = new KidUsers();
+    ((KidUsers) user).age = 10;
+    user.registerAccount();
+    ((KidUsers) user).age = 18;
+    user.registerAccount();
 
-        System.out.println("Test Case 1 : Kid User ");
+    ((KidUsers) user).bookType = "Kids";
+    user.requestBook();
+    ((KidUsers) user).bookType = "Fiction";
+    user.requestBook();
 
-        LibraryUser kid1 = new KidUsers(10, "Kids");
-        kid1.registerAccount();
-        kid1.requestBook();
+    // Test case 2
+        Libraryuser users = new AdultUser();
+        ((AdultUser) users).age = 5;
+        users.registerAccount();
+        ((AdultUser) users).age = 23;
+        users.registerAccount();
 
-        System.out.println();
-
-        LibraryUser kid2 = new KidUsers(18, "Fiction");
-        kid2.registerAccount();
-        kid2.requestBook();
-
-        System.out.println("\nTest Case 2 : Adult User");
-
-        LibraryUser adult1 = new AdultUser(5, "Kids");
-        adult1.registerAccount();
-        adult1.requestBook();
-
-        System.out.println();
-
-        LibraryUser adult2 = new AdultUser(23, "Fiction");
-        adult2.registerAccount();
-        adult2.requestBook();
-    }    
+        ((AdultUser) users).bookType = "Kids";
+        users.requestBook();
+        ((AdultUser) users).bookType = "Fiction";
+        users.requestBook();
+    }
 }
