@@ -69,7 +69,7 @@ Each week contains:
 
 ## Progress
 
-* Week 1: In Progress
-* Week 2: Pending
-* Week 3: Pending
+* Week 1: Completed
+* Week 2: Completed
+* Week 3: In Progress
 * Week 4: Pending
