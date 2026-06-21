@@ -71,5 +71,5 @@ Each week contains:
 
 * Week 1: Completed
 * Week 2: Completed
-* Week 3: In Progress
+* Week 3: Completed
 * Week 4: Pending
